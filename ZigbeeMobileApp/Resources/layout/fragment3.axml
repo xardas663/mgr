@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <CheckBox
+        android:text="Temperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbTemperature"
+        android:layout_marginTop="105px"
+        android:checked="true" />
+    <CheckBox
+        android:text="Wilgotność"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbHumidity"
+        android:checked="true" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerTemperatureSensors" />
+    <Spinner
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/spinnerHumiditySensors" />
+    <Button
+        android:text="Wybierz datę"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSelectDate" />
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDate" />
+    <OxyPlot.Xamarin.Android.PlotView
+        android:id="@+id/plot_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

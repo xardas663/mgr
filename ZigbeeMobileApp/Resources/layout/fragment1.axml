@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:text="Dodaj pokój"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddRoom"
+        android:layout_marginTop="110px" />
+    <Button
+        android:text="Pokaż plan budynku"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShowMap" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/roomsList"
+        android:layout_marginTop="0px"
+        android:paddingTop="50px"
+        android:textAlignment="center"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="5px" />
+</LinearLayout>

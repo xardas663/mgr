@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+    android:text="Edytuj pokój"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/textView1"
+    android:textAlignment="center" />
+    <Button
+        android:text="Powrót"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBackAdd" />
+    <TextView
+        android:text="Nazwa"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtName" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName" />
+    <TextView
+        android:text="Opis"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDescription" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDescription" />
+  <TextView
+     android:text="Oczekiwana wilgotność"
+     android:textAppearance="?android:attr/textAppearanceMedium"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/txtExpectedHumidity" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etExpectedHumidity" />
+  <TextView
+     android:text="Oczekiwana temperatura"
+     android:textAppearance="?android:attr/textAppearanceMedium"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/txtExpectedTemperature" />
+  <EditText
+      android:inputType="number"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/etExpectedTemperature" />
+  <TextView
+   android:text="Tolerancja"
+   android:textAppearance="?android:attr/textAppearanceMedium"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:id="@+id/txtTolerant" />
+  <EditText
+      android:inputType="number"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/etTolerant" />
+    <Button
+        android:text="Zapisz edycję"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEditRoom" />
+</LinearLayout>
