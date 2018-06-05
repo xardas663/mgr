@@ -53,15 +53,13 @@ namespace ZigbeeMobileApp.Services
             }
         }
 
-        public async Task<List<PlotData>> GetTemperatureFromApiForPlot(DateTime datetime)
+        public async Task<List<PlotData>> GetTemperatureFromApiForPlot(string dateTime, string sensorName)
         {         
                 var temperatureList = new List<PlotData>();
-                var repo = new TemperatureRepository();
-                var temperatures = await repo.GetTemperatureForGivenDay(datetime);
+                var repo = new TemperatureRepository();                
+                var temperatures = await repo.GetTemperatures(100, dateTime, sensorName);
                 foreach (var item in temperatures)
-                {
-                    if (item.TemperatureSensorId == 5) continue;
-
+                {       
                     temperatureList.Add(new PlotData()
                     {
                         Value = item.Value,
@@ -70,14 +68,13 @@ namespace ZigbeeMobileApp.Services
                 }
                 return temperatureList;                
         }
-        public async Task<List<PlotData>> GetHumidityFromApiForPlot(DateTime dateTime)
+        public async Task<List<PlotData>> GetHumidityFromApiForPlot(string dateTime, string sensorName)
         {
             var humidityList = new List<PlotData>();
-            var repo = new HumidityRepository();
-            var humidity = await repo.GetHumidityForGivenDay(dateTime);
+            var repo = new HumidityRepository();            
+            var humidity = await repo.GetHumidity(100, dateTime, sensorName);
             foreach (var item in humidity)
             {
-                if (item.HumiditySensorId == 5) continue;
                 humidityList.Add(new PlotData()
                 {
                     Value = item.Value,

@@ -1,42 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <CheckBox
         android:text="Temperatura"
-        android:layout_width="match_parent"
+        android:layout_marginTop="110px"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:id="@+id/cbTemperature"
-        android:layout_marginTop="105px"
         android:checked="true" />
     <CheckBox
         android:text="Wilgotność"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cbTemperature"
+        android:layout_alignTop="@id/cbTemperature"
         android:id="@+id/cbHumidity"
         android:checked="true" />
+    <TextView
+        android:text="Czujnik temperatury"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@id/cbHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTemp" />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtTemp"
         android:id="@+id/spinnerTemperatureSensors" />
+    <TextView
+        android:text="Czujnik wilgotności"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerTemperatureSensors"
+        android:id="@+id/txtHum" />
     <Spinner
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/spinnerHumiditySensors" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtHum"
+        android:id="@+id/spinnerHumiditySensors" />
     <Button
         android:text="Wybierz datę"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/spinnerHumiditySensors"
         android:id="@+id/btnSelectDate" />
     <TextView
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Data"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btnSelectDate"
+        android:layout_alignTop="@id/btnSelectDate"
+        android:id="@+id/txtDate"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginLeft="5dp" />
+    <Button
+        android:text="Rysuj wykres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtDate" />
+        android:layout_below="@id/btnSelectDate"
+        android:id="@+id/btnDraw" />
     <OxyPlot.Xamarin.Android.PlotView
         android:id="@+id/plot_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_width="fill_parent"
+        android:layout_below="@id/btnDraw"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

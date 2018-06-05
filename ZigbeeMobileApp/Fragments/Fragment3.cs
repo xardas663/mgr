@@ -29,17 +29,14 @@ namespace ZigbeeMobileApp.Fragments
         private ArrayAdapter<string> spinnerTemperatureAdapter;
         TextView _dateDisplay;
         Button _dateSelectButton;
+        private string date = DateTime.Now.ToString("yyyy-MM-dd");
         DataRecieverService dataRecieverService = new DataRecieverService();
         public async override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);            
-            var date = new DateTime(2018, 5, 21, 2, 50, 20);           
-            plotDataTemperature = await dataRecieverService.GetTemperatureFromApiForPlot(date);
-            plotDataHumidity = await dataRecieverService.GetHumidityFromApiForPlot(date);       
-            plotView.Model = CreatePlotModel();
+            base.OnCreate(savedInstanceState);          
             await CreateHumiditySensorsList();
             await CreateTemperatureSensorsList();
-            plotView.InvalidatePlot(true);
+            
             // Create your fragment here
         }
 
@@ -59,10 +56,30 @@ namespace ZigbeeMobileApp.Fragments
             var cbHumidity = view.FindViewById<CheckBox>(Resource.Id.cbHumidity);
             spinnerHumidity = view.FindViewById<Spinner>(Resource.Id.spinnerHumiditySensors);
             spinnerTemperature = view.FindViewById<Spinner>(Resource.Id.spinnerTemperatureSensors);
+            
+            var btnDraw = view.FindViewById<Button>(Resource.Id.btnDraw);
+            btnDraw.Click += async (o, e) => 
+            {                            
+                if (isTemp)
+                {
+                    var tempSensorName = spinnerTemperature.SelectedItem.ToString();
+                    plotDataTemperature = await dataRecieverService.GetTemperatureFromApiForPlot(date, tempSensorName);
+                }
+                if (isHumidity)
+                {
+                    var humSensorName = spinnerHumidity.SelectedItem.ToString();
+                    plotDataHumidity = await dataRecieverService.GetHumidityFromApiForPlot(date, humSensorName);
+                }               
+               
+                plotView.Model = CreatePlotModel(isTemp, isHumidity);
+                plotView.InvalidatePlot(true);
+            };
+       
 
             _dateDisplay = view.FindViewById<TextView>(Resource.Id.txtDate);
             _dateSelectButton = view.FindViewById<Button>(Resource.Id.btnSelectDate);
             _dateSelectButton.Click += DateSelect_OnClick;
+            _dateDisplay.Text = date;
 
             cbTemperature.Click += (o, e) =>
             {
@@ -74,9 +91,7 @@ namespace ZigbeeMobileApp.Fragments
                 else
                 {
                     isTemp = false;
-                }
-                plotView.Model = CreatePlotModel(isTemp,isHumidity);
-                plotView.InvalidatePlot(true);
+                }              
             };
 
             cbHumidity.Click += (o, e) =>
@@ -89,9 +104,7 @@ namespace ZigbeeMobileApp.Fragments
                 else
                 {
                     isHumidity = false;
-                }
-                plotView.Model = CreatePlotModel(isTemp,isHumidity);
-                plotView.InvalidatePlot(true);
+                }       
             };
 
 
@@ -110,11 +123,7 @@ namespace ZigbeeMobileApp.Fragments
 
                 var minHum = plotDataHumidity.Min(x => x.Value);
                 var maxHum = plotDataHumidity.Max(x => x.Value);
-
-
-                plotModel.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, StringFormat = "HH:mm:ss" });
-                //plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom });
-
+                plotModel.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, StringFormat = "HH:mm:ss" });             
 
                 LineSeries series1 = new LineSeries();
                 LineSeries series2 = new LineSeries();
@@ -170,17 +179,13 @@ namespace ZigbeeMobileApp.Fragments
 
         void DateSelect_OnClick(object sender, EventArgs eventArgs)
         {
-            DatePickerFragment frag = DatePickerFragment.NewInstance(async delegate (DateTime time)
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
             {
-                _dateDisplay.Text = time.ToLongDateString();                
-                plotDataTemperature = await dataRecieverService.GetTemperatureFromApiForPlot(time);
-                plotDataHumidity = await dataRecieverService.GetHumidityFromApiForPlot(time);
-                plotView.Model = CreatePlotModel();
-                plotView.InvalidatePlot(true);
-            });
-            
+                _dateDisplay.Text = time.ToLongDateString();
+                date= time.ToString("yyyy-MM-dd");
+            });            
 
-            frag.Show(this.Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
         }
 
         private async Task CreateHumiditySensorsList()

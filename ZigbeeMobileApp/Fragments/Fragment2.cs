@@ -160,8 +160,7 @@ namespace ZigbeeMobileApp.Fragments
                 date = time.ToString("yyyy-MM-dd");    
             });
 
-
-            frag.Show(this.Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
         }
     }
 }

@@ -2235,8 +2235,8 @@ namespace ZigbeeMobileApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0700b0
-			public const int action0 = 2131165360;
+			// aapt resource value: 0x7f0700b4
+			public const int action0 = 2131165364;
 			
 			// aapt resource value: 0x7f070064
 			public const int action_bar = 2131165284;
@@ -2259,17 +2259,17 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070041
 			public const int action_bar_title = 2131165249;
 			
-			// aapt resource value: 0x7f0700ad
-			public const int action_container = 2131165357;
+			// aapt resource value: 0x7f0700b1
+			public const int action_container = 2131165361;
 			
 			// aapt resource value: 0x7f070065
 			public const int action_context_bar = 2131165285;
 			
-			// aapt resource value: 0x7f0700b4
-			public const int action_divider = 2131165364;
+			// aapt resource value: 0x7f0700b8
+			public const int action_divider = 2131165368;
 			
-			// aapt resource value: 0x7f0700ae
-			public const int action_image = 2131165358;
+			// aapt resource value: 0x7f0700b2
+			public const int action_image = 2131165362;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -2286,17 +2286,17 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070043
 			public const int action_mode_close_button = 2131165251;
 			
-			// aapt resource value: 0x7f0700af
-			public const int action_text = 2131165359;
+			// aapt resource value: 0x7f0700b3
+			public const int action_text = 2131165363;
 			
-			// aapt resource value: 0x7f0700bd
-			public const int actions = 2131165373;
+			// aapt resource value: 0x7f0700c1
+			public const int actions = 2131165377;
 			
 			// aapt resource value: 0x7f070044
 			public const int activity_chooser_view_content = 2131165252;
 			
-			// aapt resource value: 0x7f0700aa
-			public const int activity_main = 2131165354;
+			// aapt resource value: 0x7f0700ae
+			public const int activity_main = 2131165358;
 			
 			// aapt resource value: 0x7f07001e
 			public const int add = 2131165214;
@@ -2310,8 +2310,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070023
 			public const int always = 2131165219;
 			
-			// aapt resource value: 0x7f0700a8
-			public const int appbar = 2131165352;
+			// aapt resource value: 0x7f0700ac
+			public const int appbar = 2131165356;
 			
 			// aapt resource value: 0x7f07002f
 			public const int auto = 2131165231;
@@ -2322,8 +2322,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070028
 			public const int bottom = 2131165224;
 			
-			// aapt resource value: 0x7f0700ac
-			public const int bottom_navigation = 2131165356;
+			// aapt resource value: 0x7f0700b0
+			public const int bottom_navigation = 2131165360;
 			
 			// aapt resource value: 0x7f07007f
 			public const int btnAddRoom = 2131165311;
@@ -2331,20 +2331,23 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070074
 			public const int btnBackAdd = 2131165300;
 			
-			// aapt resource value: 0x7f0700c4
-			public const int btnBackMap = 2131165380;
+			// aapt resource value: 0x7f0700c8
+			public const int btnBackMap = 2131165384;
+			
+			// aapt resource value: 0x7f0700a0
+			public const int btnDraw = 2131165344;
 			
 			// aapt resource value: 0x7f07008e
 			public const int btnEditRoom = 2131165326;
 			
-			// aapt resource value: 0x7f070099
-			public const int btnFilter = 2131165337;
+			// aapt resource value: 0x7f07009a
+			public const int btnFilter = 2131165338;
 			
 			// aapt resource value: 0x7f070096
 			public const int btnResetDate = 2131165334;
 			
-			// aapt resource value: 0x7f070094
-			public const int btnSelectDate = 2131165332;
+			// aapt resource value: 0x7f070095
+			public const int btnSelectDate = 2131165333;
 			
 			// aapt resource value: 0x7f07008f
 			public const int btnShowMap = 2131165327;
@@ -2352,8 +2355,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07004b
 			public const int buttonPanel = 2131165259;
 			
-			// aapt resource value: 0x7f0700b1
-			public const int cancel_action = 2131165361;
+			// aapt resource value: 0x7f0700b5
+			public const int cancel_action = 2131165365;
 			
 			// aapt resource value: 0x7f070092
 			public const int cbHumidity = 2131165330;
@@ -2373,8 +2376,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07005b
 			public const int checkbox = 2131165275;
 			
-			// aapt resource value: 0x7f0700b9
-			public const int chronometer = 2131165369;
+			// aapt resource value: 0x7f0700bd
+			public const int chronometer = 2131165373;
 			
 			// aapt resource value: 0x7f070039
 			public const int clip_horizontal = 2131165241;
@@ -2391,8 +2394,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07004e
 			public const int contentPanel = 2131165262;
 			
-			// aapt resource value: 0x7f0700ab
-			public const int content_frame = 2131165355;
+			// aapt resource value: 0x7f0700af
+			public const int content_frame = 2131165359;
 			
 			// aapt resource value: 0x7f070083
 			public const int coordinator = 2131165315;
@@ -2433,8 +2436,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070021
 			public const int end = 2131165217;
 			
-			// aapt resource value: 0x7f0700c3
-			public const int end_padder = 2131165379;
+			// aapt resource value: 0x7f0700c7
+			public const int end_padder = 2131165383;
 			
 			// aapt resource value: 0x7f07002a
 			public const int enterAlways = 2131165226;
@@ -2487,8 +2490,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070049
 			public const int icon = 2131165257;
 			
-			// aapt resource value: 0x7f0700be
-			public const int icon_group = 2131165374;
+			// aapt resource value: 0x7f0700c2
+			public const int icon_group = 2131165378;
 			
 			// aapt resource value: 0x7f070025
 			public const int ifRoom = 2131165221;
@@ -2496,11 +2499,11 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070046
 			public const int image = 2131165254;
 			
-			// aapt resource value: 0x7f07009f
-			public const int imgWeatherIconFCL = 2131165343;
+			// aapt resource value: 0x7f0700a3
+			public const int imgWeatherIconFCL = 2131165347;
 			
-			// aapt resource value: 0x7f0700ba
-			public const int info = 2131165370;
+			// aapt resource value: 0x7f0700be
+			public const int info = 2131165374;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
@@ -2508,29 +2511,29 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070081
 			public const int largeLabel = 2131165313;
 			
+			// aapt resource value: 0x7f0700a6
+			public const int lblExpectedHumidity = 2131165350;
+			
+			// aapt resource value: 0x7f0700a7
+			public const int lblExpectedTemperature = 2131165351;
+			
+			// aapt resource value: 0x7f0700a4
+			public const int lblHumidity = 2131165348;
+			
 			// aapt resource value: 0x7f0700a2
-			public const int lblExpectedHumidity = 2131165346;
+			public const int lblRoomName = 2131165346;
 			
-			// aapt resource value: 0x7f0700a3
-			public const int lblExpectedTemperature = 2131165347;
-			
-			// aapt resource value: 0x7f0700a0
-			public const int lblHumidity = 2131165344;
-			
-			// aapt resource value: 0x7f07009e
-			public const int lblRoomName = 2131165342;
-			
-			// aapt resource value: 0x7f0700a1
-			public const int lblTemperature = 2131165345;
+			// aapt resource value: 0x7f0700a5
+			public const int lblTemperature = 2131165349;
 			
 			// aapt resource value: 0x7f070034
 			public const int left = 2131165236;
 			
-			// aapt resource value: 0x7f0700bf
-			public const int line1 = 2131165375;
+			// aapt resource value: 0x7f0700c3
+			public const int line1 = 2131165379;
 			
-			// aapt resource value: 0x7f0700c1
-			public const int line3 = 2131165377;
+			// aapt resource value: 0x7f0700c5
+			public const int line3 = 2131165381;
 			
 			// aapt resource value: 0x7f07000f
 			public const int listMode = 2131165199;
@@ -2538,23 +2541,23 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070048
 			public const int list_item = 2131165256;
 			
-			// aapt resource value: 0x7f0700a7
-			public const int main_content = 2131165351;
+			// aapt resource value: 0x7f0700ab
+			public const int main_content = 2131165355;
 			
-			// aapt resource value: 0x7f0700c6
-			public const int masked = 2131165382;
+			// aapt resource value: 0x7f0700ca
+			public const int masked = 2131165386;
 			
-			// aapt resource value: 0x7f0700b3
-			public const int media_actions = 2131165363;
+			// aapt resource value: 0x7f0700b7
+			public const int media_actions = 2131165367;
 			
-			// aapt resource value: 0x7f0700c8
-			public const int menu_audio = 2131165384;
+			// aapt resource value: 0x7f0700cc
+			public const int menu_audio = 2131165388;
 			
-			// aapt resource value: 0x7f0700c7
-			public const int menu_home = 2131165383;
+			// aapt resource value: 0x7f0700cb
+			public const int menu_home = 2131165387;
 			
-			// aapt resource value: 0x7f0700c9
-			public const int menu_video = 2131165385;
+			// aapt resource value: 0x7f0700cd
+			public const int menu_video = 2131165389;
 			
 			// aapt resource value: 0x7f070022
 			public const int middle = 2131165218;
@@ -2577,14 +2580,14 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070010
 			public const int normal = 2131165200;
 			
-			// aapt resource value: 0x7f0700bc
-			public const int notification_background = 2131165372;
+			// aapt resource value: 0x7f0700c0
+			public const int notification_background = 2131165376;
 			
-			// aapt resource value: 0x7f0700b6
-			public const int notification_main_column = 2131165366;
+			// aapt resource value: 0x7f0700ba
+			public const int notification_main_column = 2131165370;
 			
-			// aapt resource value: 0x7f0700b5
-			public const int notification_main_column_container = 2131165365;
+			// aapt resource value: 0x7f0700b9
+			public const int notification_main_column_container = 2131165369;
 			
 			// aapt resource value: 0x7f070037
 			public const int parallax = 2131165239;
@@ -2595,8 +2598,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070038
 			public const int pin = 2131165240;
 			
-			// aapt resource value: 0x7f07009d
-			public const int plot_view = 2131165341;
+			// aapt resource value: 0x7f0700a1
+			public const int plot_view = 2131165345;
 			
 			// aapt resource value: 0x7f070006
 			public const int progress_circular = 2131165190;
@@ -2610,17 +2613,17 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070035
 			public const int right = 2131165237;
 			
-			// aapt resource value: 0x7f0700bb
-			public const int right_icon = 2131165371;
+			// aapt resource value: 0x7f0700bf
+			public const int right_icon = 2131165375;
 			
-			// aapt resource value: 0x7f0700b7
-			public const int right_side = 2131165367;
+			// aapt resource value: 0x7f0700bb
+			public const int right_side = 2131165371;
 			
 			// aapt resource value: 0x7f070090
 			public const int roomsList = 2131165328;
 			
-			// aapt resource value: 0x7f070098
-			public const int sbAmount = 2131165336;
+			// aapt resource value: 0x7f070099
+			public const int sbAmount = 2131165337;
 			
 			// aapt resource value: 0x7f07001a
 			public const int screen = 2131165210;
@@ -2700,14 +2703,14 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07004c
 			public const int spacer = 2131165260;
 			
-			// aapt resource value: 0x7f07009c
-			public const int spinnerHumiditySensors = 2131165340;
+			// aapt resource value: 0x7f07009f
+			public const int spinnerHumiditySensors = 2131165343;
 			
-			// aapt resource value: 0x7f070093
-			public const int spinnerSensors = 2131165331;
+			// aapt resource value: 0x7f070094
+			public const int spinnerSensors = 2131165332;
 			
-			// aapt resource value: 0x7f07009b
-			public const int spinnerTemperatureSensors = 2131165339;
+			// aapt resource value: 0x7f07009d
+			public const int spinnerTemperatureSensors = 2131165341;
 			
 			// aapt resource value: 0x7f070008
 			public const int split_action_bar = 2131165192;
@@ -2724,8 +2727,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070036
 			public const int start = 2131165238;
 			
-			// aapt resource value: 0x7f0700b2
-			public const int status_bar_latest_event_content = 2131165362;
+			// aapt resource value: 0x7f0700b6
+			public const int status_bar_latest_event_content = 2131165366;
 			
 			// aapt resource value: 0x7f07005e
 			public const int submenuarrow = 2131165278;
@@ -2736,14 +2739,14 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070011
 			public const int tabMode = 2131165201;
 			
-			// aapt resource value: 0x7f07009a
-			public const int temphumlist = 2131165338;
+			// aapt resource value: 0x7f07009b
+			public const int temphumlist = 2131165339;
 			
-			// aapt resource value: 0x7f0700c2
-			public const int text = 2131165378;
+			// aapt resource value: 0x7f0700c6
+			public const int text = 2131165382;
 			
-			// aapt resource value: 0x7f0700c0
-			public const int text2 = 2131165376;
+			// aapt resource value: 0x7f0700c4
+			public const int text2 = 2131165380;
 			
 			// aapt resource value: 0x7f070052
 			public const int textSpacerNoButtons = 2131165266;
@@ -2763,8 +2766,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07000d
 			public const int textinput_error = 2131165197;
 			
-			// aapt resource value: 0x7f0700b8
-			public const int time = 2131165368;
+			// aapt resource value: 0x7f0700bc
+			public const int time = 2131165372;
 			
 			// aapt resource value: 0x7f07004a
 			public const int title = 2131165258;
@@ -2775,8 +2778,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f070057
 			public const int title_template = 2131165271;
 			
-			// aapt resource value: 0x7f0700a9
-			public const int toolbar = 2131165353;
+			// aapt resource value: 0x7f0700ad
+			public const int toolbar = 2131165357;
 			
 			// aapt resource value: 0x7f070029
 			public const int top = 2131165225;
@@ -2793,11 +2796,11 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07000b
 			public const int transition_scene_layoutid_cache = 2131165195;
 			
-			// aapt resource value: 0x7f070097
-			public const int txtAmount = 2131165335;
+			// aapt resource value: 0x7f070098
+			public const int txtAmount = 2131165336;
 			
-			// aapt resource value: 0x7f070095
-			public const int txtDate = 2131165333;
+			// aapt resource value: 0x7f070097
+			public const int txtDate = 2131165335;
 			
 			// aapt resource value: 0x7f070077
 			public const int txtDescription = 2131165303;
@@ -2808,20 +2811,29 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07007b
 			public const int txtExpectedTemperature = 2131165307;
 			
+			// aapt resource value: 0x7f07009e
+			public const int txtHum = 2131165342;
+			
 			// aapt resource value: 0x7f070075
 			public const int txtName = 2131165301;
 			
-			// aapt resource value: 0x7f0700a4
-			public const int txtRoomName = 2131165348;
+			// aapt resource value: 0x7f0700a8
+			public const int txtRoomName = 2131165352;
 			
-			// aapt resource value: 0x7f0700a5
-			public const int txtSensorId = 2131165349;
+			// aapt resource value: 0x7f070093
+			public const int txtSensor = 2131165331;
+			
+			// aapt resource value: 0x7f0700a9
+			public const int txtSensorId = 2131165353;
+			
+			// aapt resource value: 0x7f07009c
+			public const int txtTemp = 2131165340;
 			
 			// aapt resource value: 0x7f07007d
 			public const int txtTolerant = 2131165309;
 			
-			// aapt resource value: 0x7f0700a6
-			public const int txtValue = 2131165350;
+			// aapt resource value: 0x7f0700aa
+			public const int txtValue = 2131165354;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;
@@ -2832,8 +2844,8 @@ namespace ZigbeeMobileApp
 			// aapt resource value: 0x7f07000e
 			public const int view_offset_helper = 2131165198;
 			
-			// aapt resource value: 0x7f0700c5
-			public const int visible = 2131165381;
+			// aapt resource value: 0x7f0700c9
+			public const int visible = 2131165385;
 			
 			// aapt resource value: 0x7f070027
 			public const int withText = 2131165223;

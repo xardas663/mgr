@@ -1,46 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <CheckBox
         android:text="Temperatura"
-        android:layout_width="match_parent"
+        android:layout_marginTop="110px"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:id="@+id/cbTemperature"
-        android:layout_marginTop="120px"
         android:checked="true" />
     <CheckBox
         android:text="Wilgotność"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cbHumidity" />
+        android:layout_toRightOf="@id/cbTemperature"
+        android:layout_alignTop="@id/cbTemperature"
+        android:id="@+id/cbHumidity"
+        android:checked="true" />
+    <TextView
+        android:text="Czujnik "
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@id/cbHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSensor" />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtSensor"
         android:id="@+id/spinnerSensors" />
     <Button
         android:text="Wybierz datę"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="38.0dp"
         android:id="@+id/btnSelectDate"
-        android:height="5px"
-        android:layout_marginBottom="0.0dp" />
-    <TextView
-        android:text="Data"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtDate" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/spinnerSensors" />
     <Button
         android:text="Resetuj datę"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="38.0dp"
+        android:layout_toRightOf="@id/btnSelectDate"
+        android:layout_alignTop="@id/btnSelectDate"
         android:id="@+id/btnResetDate"
         android:height="5px"
         android:layout_marginBottom="3.5dp" />
     <TextView
+        android:text="Wszystkie daty"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btnResetDate"
+        android:layout_alignTop="@id/btnResetDate"
+        android:id="@+id/txtDate"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp" />
+    <TextView
         android:text="Ilość wyników"
+        android:layout_below="@id/btnSelectDate"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,12 +67,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sbAmount"
+        android:layout_below="@id/txtAmount"
         android:progress="70" />
     <Button
         android:text="Filtruj"
         android:layout_width="match_parent"
         android:layout_height="38.0dp"
         android:id="@+id/btnFilter"
+        android:layout_below="@id/sbAmount"
         android:height="7px" />
     <ListView
         android:minWidth="25px"
@@ -64,6 +84,7 @@
         android:id="@+id/temphumlist"
         android:layout_marginTop="10.5dp"
         android:textAlignment="center"
+        android:layout_below="@id/btnFilter"
         android:layout_marginLeft="5px"
         android:layout_marginRight="5px" />
-</LinearLayout>
+</RelativeLayout>
