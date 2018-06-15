@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core
+namespace ZigbeeMobileApp.Model
 {
 
     public class Humidity: IEntity

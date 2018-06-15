@@ -1,4 +1,4 @@
-﻿namespace Core
+﻿namespace ZigbeeMobileApp.Model
 {
 
     public enum SensorType

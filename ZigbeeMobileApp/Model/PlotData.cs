@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ZigbeeMobileApp.Services
+namespace ZigbeeMobileApp.Model
 {
     public class PlotData
     {

@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using ZigbeeMobileApp.Fragments;
 using ZigbeeMobileApp.Services;
-using Core;
+using ZigbeeMobileApp.Model;
 
 namespace ZigbeeMobileApp.Activities
 {
@@ -28,7 +28,10 @@ namespace ZigbeeMobileApp.Activities
             var description = FindViewById<EditText>(Resource.Id.etDescription);
             var expectedHumidity = FindViewById<EditText>(Resource.Id.etExpectedHumidity);
             var expectedTemperature = FindViewById<EditText>(Resource.Id.etExpectedTemperature);
-            var tolerant = FindViewById<EditText>(Resource.Id.etTolerant);
+            var maxTemp = FindViewById<EditText>(Resource.Id.etMaxTemp);
+            var minTemp = FindViewById<EditText>(Resource.Id.etMinTemp);
+            var maxHum = FindViewById<EditText>(Resource.Id.etMaxHum);
+            var minHum = FindViewById<EditText>(Resource.Id.etMinHum);
 
             buttonBack.Click += (s, e) =>
             {
@@ -38,20 +41,31 @@ namespace ZigbeeMobileApp.Activities
 
             buttonAdd.Click += async (s, e) =>
             {
+                
                 var service = new RoomsService();
+
+                if (expectedHumidity.Text == "") expectedHumidity.Text = "0";
+                if (expectedTemperature.Text == "") expectedTemperature.Text = "0";
+                if (maxTemp.Text == "") maxTemp.Text = "0";
+                if (minTemp.Text == "") minTemp.Text = "0";
+                if (maxHum.Text == "") maxHum.Text = "0";
+                if (minHum.Text == "") minHum.Text = "0";
+
                 var room = new Room()
                 {
-                    Name=name.Text,
-                    Description=description.Text,
-                    ExpectedHumidity= float.Parse(expectedHumidity.Text),
-                    ExpectedTemperature = float.Parse(expectedTemperature.Text)                   
+                    Name=name.Text ?? "nowePomieszczenie"+DateTime.Now.ToShortDateString(),
+                    Description=description.Text ?? "",
+                    ExpectedHumidity= float.Parse(expectedHumidity.Text ?? "0"),
+                    ExpectedTemperature = float.Parse(expectedTemperature.Text ?? "0"),
+                    MaxTemperature=float.Parse(maxTemp.Text ?? "0"),
+                    MinTemperature=float.Parse(minTemp.Text ?? "0"),
+                    MaxHumidity=float.Parse(maxHum.Text ?? "0"),
+                    MinHumidity=float.Parse(minHum.Text ?? "0")
                 };
                 await service.AddRoom(room);
                 var nextActivity = new Intent(this, typeof(MainActivity));
                 StartActivity(nextActivity);
             };
-
-            // Create your application here
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Core;
+using ZigbeeMobileApp.Model;
 using System.Threading.Tasks;
 
 namespace ZigbeeMobileApp.Repository
@@ -10,5 +10,7 @@ namespace ZigbeeMobileApp.Repository
         Task<IEnumerable<Room>> GetAllRooms();
         Task EditRoom(Room room);
         Task AddRoom(Room room);
+
+        Task DeleteRoom(string roomName);
     }
 }

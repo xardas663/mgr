@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Core;
+using ZigbeeMobileApp.Model;
 using System;
 
 namespace ZigbeeMobileApp.Repository
@@ -34,34 +34,6 @@ namespace ZigbeeMobileApp.Repository
             }
            
             
-        }
-
-        public async Task<IEnumerable<Temperature>> GetTemperatureForGivenDay(DateTime dateTime)
-        {
-           
-            try
-            {
-                var client = new HttpClient();
-                var date = dateTime.ToString("yyyy-MM-dd");
-                var response = await client.GetAsync($"http://zigbeeapi.azurewebsites.net/api/temperature/plot?dateTime={date}");
-                if (response.IsSuccessStatusCode)
-                {
-                    var humidityJson = await response.Content.ReadAsStringAsync();
-                    var humidity = JsonConvert.DeserializeObject<IEnumerable<Temperature>>(humidityJson);
-                    return humidity;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            
-
-        }
+        }      
     }
 }

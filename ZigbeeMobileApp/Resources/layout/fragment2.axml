@@ -17,7 +17,7 @@
         android:layout_toRightOf="@id/cbTemperature"
         android:layout_alignTop="@id/cbTemperature"
         android:id="@+id/cbHumidity"
-        android:checked="true" />
+        android:checked="false" />
     <TextView
         android:text="Czujnik "
         android:textAppearance="?android:attr/textAppearanceSmall"

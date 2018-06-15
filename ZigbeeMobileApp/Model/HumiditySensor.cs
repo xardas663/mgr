@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Core
+namespace ZigbeeMobileApp.Model
 {
 
     public class HumiditySensor : IEntity
@@ -8,7 +8,7 @@ namespace Core
         public string Name { get; set; }
         public string DomoticzId { get; set; }
         public string Desription { get; set; }
-        public int RoomId { get; set; }
+        public int? RoomId { get; set; }
         public Room Room { get; set; }
         public List<Humidity> Humidity { get; set; }
         public int Id { get; set; }

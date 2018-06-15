@@ -5,6 +5,7 @@ using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ZigbeeMobileApp.Activities;
 using ZigbeeMobileApp.Services;
 
@@ -15,18 +16,14 @@ namespace ZigbeeMobileApp.Fragments
         private static List<ListViewRoomsRow> rowList = new List<ListViewRoomsRow>();
         private ListView mListView;
         private ListViewRoomsAdapter adapter;
+        private ProgressBar progressBar;
         private readonly DataRecieverService dataRecieverService = new DataRecieverService();
+
         public async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            rowList = await dataRecieverService.GetRooms();
-            mListView.Adapter = null;
-            var inflater = GetLayoutInflater(savedInstanceState);
-            adapter = new ListViewRoomsAdapter(Context, rowList, inflater);
-            mListView.Adapter = adapter;
-            adapter.NotifyDataSetChanged();
-            // Create your fragment here
-        }
+            await GetRoomsAndBindToList(savedInstanceState);
+        }       
 
         public static Fragment1 NewInstance()
         {
@@ -34,15 +31,20 @@ namespace ZigbeeMobileApp.Fragments
             return frag1;
         }
 
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var view = inflater.Inflate(Resource.Layout.fragment1, null);
+
             mListView = view.FindViewById<ListView>(Resource.Id.roomsList);
-            adapter = new ListViewRoomsAdapter(Context, rowList, inflater);
+            progressBar = view.FindViewById<ProgressBar>(Resource.Id.pbStatus);
             var btnAddRoom = view.FindViewById<Button>(Resource.Id.btnAddRoom);
             var btnShowMap = view.FindViewById<Button>(Resource.Id.btnShowMap);
+            var btnSettings = view.FindViewById<Button>(Resource.Id.btnSettings);
+            var btnInfo = view.FindViewById<Button>(Resource.Id.btnInfo);
+
+            adapter = new ListViewRoomsAdapter(Context, rowList, inflater);
+    
             mListView.ItemLongClick += (o, e) =>
             {
                 var item = rowList[e.Position];
@@ -52,7 +54,6 @@ namespace ZigbeeMobileApp.Fragments
                 nextActivity.PutExtra("item", itemJson);
                 StartActivity(nextActivity);
             };
-
             btnAddRoom.Click += (o, e) =>
             {
                 var nextActivity = new Intent(view.Context, typeof(AddRoom));             
@@ -63,9 +64,28 @@ namespace ZigbeeMobileApp.Fragments
                 var nextActivity = new Intent(view.Context, typeof(ShowMap));                
                 StartActivity(nextActivity);
             };
+            btnInfo.Click += (o, e) =>
+            {
+                var nextActivity = new Intent(view.Context, typeof(Info));
+                StartActivity(nextActivity);
+            };
+            btnSettings.Click += (o, e) =>
+            {
+                var nextActivity = new Intent(view.Context, typeof(Settings));
+                StartActivity(nextActivity);
+            };
 
 
             return view;
-        }      
+        }
+        private async Task GetRoomsAndBindToList(Bundle savedInstanceState)
+        {
+            rowList = await dataRecieverService.GetRooms();
+            var inflater = GetLayoutInflater(savedInstanceState);
+            adapter = new ListViewRoomsAdapter(Context, rowList, inflater);
+            mListView.Adapter = adapter;
+            adapter.NotifyDataSetChanged();
+            progressBar.Visibility = ViewStates.Invisible;
+        }
     }
 }

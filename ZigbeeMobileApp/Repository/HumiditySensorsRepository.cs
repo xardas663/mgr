@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core;
 using System.Net.Http;
 using Newtonsoft.Json;
+using ZigbeeMobileApp.Model;
 
 namespace ZigbeeMobileApp.Repository
 {

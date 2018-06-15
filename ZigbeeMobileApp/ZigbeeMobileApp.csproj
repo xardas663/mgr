@@ -107,6 +107,8 @@
   <ItemGroup>
     <Compile Include="Activities\AddRoom.cs" />
     <Compile Include="Activities\EditRoom.cs" />
+    <Compile Include="Activities\Info.cs" />
+    <Compile Include="Activities\Settings.cs" />
     <Compile Include="Activities\ShowMap.cs" />
     <Compile Include="BottomNavigationViewUtils.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
@@ -125,7 +127,6 @@
     <Compile Include="Model\SensorType.cs" />
     <Compile Include="Model\Temperature.cs" />
     <Compile Include="Model\TemperatureSensor.cs" />
-    <Compile Include="Model\WeatherOutside.cs" />
     <Compile Include="Repository\HumidityRepository.cs" />
     <Compile Include="Repository\HumiditySensorsRepository.cs" />
     <Compile Include="Repository\IHumidityRepository.cs" />
@@ -134,13 +135,16 @@
     <Compile Include="Repository\ITemeratureSensorsRepository.cs" />
     <Compile Include="Repository\ITemperatureRepository.cs" />
     <Compile Include="Repository\RoomsRepository.cs" />
+    <Compile Include="Repository\SettingsRepository.cs" />
     <Compile Include="Repository\TemperatureRepository.cs" />
     <Compile Include="Repository\TemperatureSensorsReposiotory.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataRecieverService.cs" />
-    <Compile Include="Services\PlotData.cs" />
+    <Compile Include="Services\IRoomsService.cs" />
+    <Compile Include="Model\PlotData.cs" />
     <Compile Include="Services\RoomsService.cs" />
+    <Compile Include="Services\SettingsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -148,7 +152,9 @@
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
     <AndroidResource Include="Resources\layout\fragment1.axml" />
-    <AndroidResource Include="Resources\layout\fragment2.axml" />
+    <AndroidResource Include="Resources\layout\fragment2.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment3.axml" />
     <AndroidResource Include="Resources\layout\listViewRow.axml">
       <SubType>Designer</SubType>
@@ -163,6 +169,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\EditRoom.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\list_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Info.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -215,6 +230,22 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_action_home.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_action_videocam.png" />
     <AndroidResource Include="Resources\drawable\nav_item_colors.xml" />
+    <AndroidResource Include="Resources\drawable\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\info.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\plan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\map.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

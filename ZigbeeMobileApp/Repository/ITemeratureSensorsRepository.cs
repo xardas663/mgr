@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core;
+using ZigbeeMobileApp.Model;
 
 namespace ZigbeeMobileApp.Repository
 {

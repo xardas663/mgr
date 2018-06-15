@@ -27,8 +27,6 @@ namespace ZigbeeMobileApp.Activities
                 var nextActivity = new Intent(this, typeof(MainActivity));
                 StartActivity(nextActivity);
             };
-
-            // Create your application here
         }
     }
 }

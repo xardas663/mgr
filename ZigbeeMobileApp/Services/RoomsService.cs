@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Core;
+﻿using ZigbeeMobileApp.Model;
 using System.Threading.Tasks;
 using ZigbeeMobileApp.Repository;
 
@@ -29,11 +18,11 @@ namespace ZigbeeMobileApp.Services
             var _roomsRepository = new RoomsRepository();
             await _roomsRepository.EditRoom(room);
         }
-    }
 
-    public interface IRoomsService
-    {
-        Task EditRoom(Room room);
-        Task AddRoom(Room room);
+        public async Task DeleteRoom(string roomName)
+        {
+            var _roomsRepository = new RoomsRepository();
+            await _roomsRepository.DeleteRoom(roomName);
+        }
     }
 }

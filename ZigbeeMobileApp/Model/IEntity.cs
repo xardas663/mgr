@@ -1,5 +1,5 @@
-﻿namespace Core
-{
+﻿namespace ZigbeeMobileApp.Model
+{ 
 
     public interface IEntity
     {

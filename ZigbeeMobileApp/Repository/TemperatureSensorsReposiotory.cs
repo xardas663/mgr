@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core;
+using ZigbeeMobileApp.Model;
 using System.Net.Http;
 using Newtonsoft.Json;
 

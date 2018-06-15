@@ -1,4 +1,4 @@
-﻿using Core;
+﻿using ZigbeeMobileApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,10 +95,17 @@ namespace ZigbeeMobileApp.Services
                 {
                     RoomId = item.Id.ToString(),
                     RoomName = item.Name,
+                    Description=item.Description,
                     Humidity = item.HumiditySensors.Select(x => x.Humidity.Select(y => y.Value.ToString()).FirstOrDefault()).FirstOrDefault(),
                     Temperature = item.TemperatureSensors.Select(x => x.Temperatures.Select(y => y.Value.ToString()).FirstOrDefault()).FirstOrDefault(),
                     ExpectedHumidity = item.ExpectedHumidity.ToString(),
-                    ExpectedTemperature = item.ExpectedTemperature.ToString()
+                    ExpectedTemperature = item.ExpectedTemperature.ToString(),
+                    MaxTemperature = item.MaxTemperature.ToString(),
+                    MinTemperature = item.MinTemperature.ToString(),
+                    MaxHumidity = item.MaxHumidity.ToString(),
+                    MinHumidity = item.MinHumidity.ToString(),
+                    TemperatureSensors=item.TemperatureSensors.Select(x=>x.Name),
+                    HumiditySensors=item.HumiditySensors.Select(x=>x.Name)
                 });
             }
             return roomsList;

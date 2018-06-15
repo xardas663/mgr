@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -11,9 +14,9 @@
         android:id="@+id/textView1"
         android:textAlignment="center" />
     <Button
-        android:text="Powrót"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        android:layout_width="64px"
+        android:layout_height="64px"
         android:id="@+id/btnBackAdd" />
     <TextView
         android:text="Nazwa"
@@ -58,19 +61,53 @@
         android:layout_height="wrap_content"
         android:id="@+id/etExpectedTemperature" />
     <TextView
-        android:text="Tolerancja"
+        android:text="Maksymalna temperatura"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtTolerant" />
+        android:id="@+id/txtMaxTemp" />
     <EditText
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etTolerant" />
+        android:id="@+id/etMaxTemp" />
+    <TextView
+        android:text="Minimalna temperatura"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMinTemp" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etMinTemp" />
+    <TextView
+        android:text="Maksymalna wilgotność"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMaxHum" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etMaxHum" />
+    <TextView
+        android:text="Minimalna wilgotność"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMinHum" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etMinHum" />
     <Button
         android:text="Dodaj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnAddRoom" />
 </LinearLayout>
+</ScrollView>

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Core;
+using ZigbeeMobileApp.Model;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -39,15 +39,30 @@ namespace ZigbeeMobileApp.Repository
             var response = await post.Content.ReadAsStringAsync();
         }
 
+        public async Task DeleteRoom(string roomName)
+        {
+            var client = new HttpClient();         
+            var post = await client.DeleteAsync($"http://zigbeeapi.azurewebsites.net/api/rooms?roomName={roomName}");
+            var response = await post.Content.ReadAsStringAsync();
+        }
+
         public async Task<IEnumerable<Room>> GetAllRooms()
         {
             var client = new HttpClient();
             var response = await client.GetAsync($"http://zigbeeapi.azurewebsites.net/api/rooms");
             if (response.IsSuccessStatusCode)
             {
-                var roomsJson = await response.Content.ReadAsStringAsync();
-                var rooms = JsonConvert.DeserializeObject<IEnumerable<Room>>(roomsJson);
-                return rooms;
+                var roomsJson = await response.Content.ReadAsStringAsync(); try
+                {
+                    var rooms = JsonConvert.DeserializeObject<IEnumerable<Room>>(roomsJson);
+                    return rooms;
+                }
+                catch (System.Exception e)
+                {
+
+                    throw e;
+                }
+                
             }
             else
             {
