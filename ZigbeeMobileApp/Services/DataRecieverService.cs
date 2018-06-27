@@ -17,7 +17,7 @@ namespace ZigbeeMobileApp.Services
             {
                 var rowList = CreateNewListForTemperature();
                 var repo = new TemperatureRepository();
-                var temperatures = await repo.GetTemperatures(amount,date, sensorName);
+                var temperatures = await repo.GetTemperatures(amount, date, sensorName);
                 foreach (var item in temperatures)
                 {
                     rowList.Add(new ListViewDataRow()
@@ -54,24 +54,24 @@ namespace ZigbeeMobileApp.Services
         }
 
         public async Task<List<PlotData>> GetTemperatureFromApiForPlot(string dateTime, string sensorName)
-        {         
-                var temperatureList = new List<PlotData>();
-                var repo = new TemperatureRepository();                
-                var temperatures = await repo.GetTemperatures(100, dateTime, sensorName);
-                foreach (var item in temperatures)
-                {       
-                    temperatureList.Add(new PlotData()
-                    {
-                        Value = item.Value,
-                        Date = item.Date
-                    });
-                }
-                return temperatureList;                
+        {
+            var temperatureList = new List<PlotData>();
+            var repo = new TemperatureRepository();
+            var temperatures = await repo.GetTemperatures(100, dateTime, sensorName);
+            foreach (var item in temperatures)
+            {
+                temperatureList.Add(new PlotData()
+                {
+                    Value = item.Value,
+                    Date = item.Date
+                });
+            }
+            return temperatureList;
         }
         public async Task<List<PlotData>> GetHumidityFromApiForPlot(string dateTime, string sensorName)
         {
             var humidityList = new List<PlotData>();
-            var repo = new HumidityRepository();            
+            var repo = new HumidityRepository();
             var humidity = await repo.GetHumidity(100, dateTime, sensorName);
             foreach (var item in humidity)
             {
@@ -95,7 +95,7 @@ namespace ZigbeeMobileApp.Services
                 {
                     RoomId = item.Id.ToString(),
                     RoomName = item.Name,
-                    Description=item.Description,
+                    Description = item.Description,
                     Humidity = item.HumiditySensors.Select(x => x.Humidity.Select(y => y.Value.ToString()).FirstOrDefault()).FirstOrDefault(),
                     Temperature = item.TemperatureSensors.Select(x => x.Temperatures.Select(y => y.Value.ToString()).FirstOrDefault()).FirstOrDefault(),
                     ExpectedHumidity = item.ExpectedHumidity.ToString(),
@@ -104,8 +104,8 @@ namespace ZigbeeMobileApp.Services
                     MinTemperature = item.MinTemperature.ToString(),
                     MaxHumidity = item.MaxHumidity.ToString(),
                     MinHumidity = item.MinHumidity.ToString(),
-                    TemperatureSensors=item.TemperatureSensors.Select(x=>x.Name),
-                    HumiditySensors=item.HumiditySensors.Select(x=>x.Name)
+                    TemperatureSensors = item.TemperatureSensors.Select(x => x.Name),
+                    HumiditySensors = item.HumiditySensors.Select(x => x.Name)
                 });
             }
             return roomsList;
@@ -113,7 +113,7 @@ namespace ZigbeeMobileApp.Services
 
         public async Task<List<TemperatureSensor>> GetAllTemperatureSensors()
         {
-            var repo = new TemperatureSensorsReposiotory();
+            var repo = new TemperatureSensorsRepository();
             var sensors = await repo.GetAll();
             return sensors.ToList();
         }
@@ -155,9 +155,54 @@ namespace ZigbeeMobileApp.Services
                 };
             return rowList;
         }
+        public async Task<IEnumerable<HumidityAvgDaily>> GetHumidityAvgDaily(string sensorName)
+        {
+            var repo = new HumidityRepository();
+            return await repo.GetHumidityAvgDaily(sensorName);
+        }
+
+        public async Task<IEnumerable<HumidityAvgMonthly>> GetHumidityAvgMonthly(string sensorName)
+        {
+            var repo = new HumidityRepository();
+            return await repo.GetHumidityAvgMonthly(sensorName);
+        }
+
+        public async Task<IEnumerable<HumidityAvgYearly>> GetHumidityAvgYearly(string sensorName)
+        {
+            var repo = new HumidityRepository();
+            return await repo.GetHumidityAvgYearly(sensorName);
+        }
+
+        public async Task<IEnumerable<TemperatureAvgDaily>> GetTemperatureAvgDaily(string sensorName)
+        {
+            var repo = new TemperatureRepository();
+            return await repo.GetTemperatureAvgDaily(sensorName);
+        }
+
+        public async Task<IEnumerable<TemperatureAvgMonthly>> GetTemperatureAvgMonthly(string sensorName)
+        {
+            var repo = new TemperatureRepository();
+            return await repo.GetTemperatureAvgMonthly(sensorName);
+        }
+
+        public async Task<IEnumerable<TemperatureAvgYearly>> GetTemperatureAvgYearly(string sensorName)
+        {
+            var repo = new TemperatureRepository();
+            return await repo.GetTemperatureAvgYearly(sensorName);
+        }
+
+        public async Task<Room> GetRoomForGivenSensorName(string sensorName, bool isHumidity)
+        {
+            if (isHumidity)
+            {
+                var repo = new HumiditySensorsRepository();
+                return await repo.GetRoomForGivenSensorName(sensorName);
+            }
+            else
+            {
+                var repo = new TemperatureSensorsRepository();
+                return await repo.GetRoomForGivenSensorName(sensorName);
+            }
+        }
     }
-
-  
-
-
 }

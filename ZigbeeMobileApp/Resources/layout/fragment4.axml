@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <CheckBox
+        android:text="Dzień"
+        android:layout_marginTop="110px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/cbDaily"
+        android:checked="true" />
+    <CheckBox
+        android:text="Miesiąc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cbDaily"
+        android:layout_alignTop="@id/cbDaily"
+        android:id="@+id/cbMonthly"
+        android:checked="false" />
+    <CheckBox
+        android:text="Rok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cbMonthly"
+        android:layout_alignTop="@id/cbMonthly"
+        android:id="@+id/cbYearly"
+        android:checked="false" />
+    <CheckBox
+        android:text="Temperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/cbDaily"
+        android:id="@+id/cbTemperature"
+        android:checked="true" />
+    <CheckBox
+        android:text="Wilgotność"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cbTemperature"
+        android:layout_alignTop="@id/cbTemperature"
+        android:id="@+id/cbHumidity"
+        android:checked="false" />
+    <TextView
+        android:text="Czujnik:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@id/cbHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTemp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTemp"
+        android:id="@+id/spinnerSensors" />
+    <Button
+        android:text="Rysuj wykres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerSensors"
+        android:id="@+id/btnDraw" />
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="35dp"
+      android:src="@drawable/legend"
+      android:layout_below="@id/btnDraw"
+      android:id="@+id/imgLegend" />
+    <OxyPlot.Xamarin.Android.PlotView
+        android:id="@+id/plot_view"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/imgLegend"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

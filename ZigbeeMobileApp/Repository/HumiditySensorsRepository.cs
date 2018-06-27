@@ -24,5 +24,21 @@ namespace ZigbeeMobileApp.Repository
                 return null;
             }
         }
+
+        public async Task<Room> GetRoomForGivenSensorName(string sensorName)
+        {
+            var client = new HttpClient();
+            var response = await client.GetAsync($"http://zigbeeapi.azurewebsites.net/api/humiditysensors/room?sensorName={sensorName}");
+            if (response.IsSuccessStatusCode)
+            {
+                var roomJson = await response.Content.ReadAsStringAsync();
+                var room = JsonConvert.DeserializeObject<Room>(roomJson);
+                return room;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

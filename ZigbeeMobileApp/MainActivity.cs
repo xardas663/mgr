@@ -53,6 +53,9 @@ namespace ZigbeeMobileApp
                 case Resource.Id.menu_video:
                     fragment = Fragment3.NewInstance();
                     break;
+                case Resource.Id.menu_video2:
+                    fragment = Fragment4.NewInstance();
+                    break;
             }
             if (fragment == null)
                 return;

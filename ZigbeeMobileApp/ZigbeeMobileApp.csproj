@@ -113,6 +113,7 @@
     <Compile Include="BottomNavigationViewUtils.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
     <Compile Include="Fragments\Fragment1.cs" />
+    <Compile Include="Fragments\Fragment4.cs" />
     <Compile Include="Fragments\Fragment3.cs" />
     <Compile Include="Fragments\Fragment2.cs" />
     <Compile Include="ListViewAdapter.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="ListViewRoomsAdapter.cs" />
     <Compile Include="ListViewRoomsRow.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Model\AvgTypes.cs" />
     <Compile Include="Model\Humidity.cs" />
     <Compile Include="Model\HumiditySensor.cs" />
     <Compile Include="Model\IEntity.cs" />
@@ -180,6 +182,7 @@
     <AndroidResource Include="Resources\layout\Info.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment4.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\main.axml">
@@ -246,6 +249,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\map.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_chart2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_chart2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_chart2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_chart2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_action_chart2.png" />
+    <AndroidResource Include="Resources\drawable\legend.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

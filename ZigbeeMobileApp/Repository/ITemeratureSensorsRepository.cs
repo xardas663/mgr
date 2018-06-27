@@ -7,6 +7,7 @@ namespace ZigbeeMobileApp.Repository
 
     public interface ITemeratureSensorsRepository
     {
-        Task<IEnumerable<TemperatureSensor>> GetAll();    
+        Task<IEnumerable<TemperatureSensor>> GetAll();
+        Task<Room> GetRoomForGivenSensorName(string sensorName);
     }
 }

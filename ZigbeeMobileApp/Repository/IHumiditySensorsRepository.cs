@@ -8,5 +8,6 @@ namespace ZigbeeMobileApp.Repository
     public interface IHumiditySensorsRepository
     {
         Task<IEnumerable<HumiditySensor>> GetAll();
+        Task<Room> GetRoomForGivenSensorName(string sensorName);
     }
 }
